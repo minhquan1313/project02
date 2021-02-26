@@ -24,6 +24,11 @@ $(window).on("scroll", function () {
 });
 
 // Tu dong them va xoa this--active khi luot den noi dung cua tieu de do
+// Sử dụng $ lồng nhau kiểu
+// $(".header__nav-item a[href*='Home']")
+// Thì có nghĩa là tìm tất cả class tên header__nav-item mà có con là a và a phải có href chứa Home
+// Vì href*= nên chỉ cần chứa cụm Home là ăn, không cần ghi rõ *='#Home'
+// Và thêm .parent() phía sau để nó biết addClass vào thằng ghi đầu tiên trong $, nếu không thì nó addClass vào thằng a có href...
 $(document).on("scroll", function () {
     if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height()) {
         $(".header__nav-item").removeClass("this--active");

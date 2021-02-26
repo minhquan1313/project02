@@ -79,7 +79,7 @@ body {
     /* background-blend-mode: soft-light; */
     background-size: cover;
     background-position: top left;
-    border-radius: 1rem;
+    border-radius: 1111rem;
     transition: all 0.3 ease-out;
 }
 ::-webkit-scrollbar-track {
