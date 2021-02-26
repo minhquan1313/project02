@@ -2,6 +2,15 @@
     background-color: var(--bg-color-main);
     height: 999rem;
 }
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+}
 /* ------------------------------------------------------------------------------------------------------------------------ */
 .main__header {
 }
@@ -152,14 +161,18 @@
 .main__container {
 }
 /* ------------------------------------------------------------------------------------------------------------------------ */
-.container__Home {
+.container {
     position: relative;
     z-index: 0;
     display: flex;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
     background-color: var(--bg-color-main);
     overflow: hidden;
+}
+
+.container__Home {
+    height: 100vh;
 }
 .container__Home::after {
     position: absolute;
@@ -207,7 +220,7 @@
     display: flex;
     flex-direction: column;
     /* flex: 1; */
-    margin: 0 2%;
+    margin: 0 5%;
     max-width: 40rem;
 }
 
@@ -283,8 +296,7 @@
 }
 /* ...------------------------------------------------------------------------------------------------------------------------ */
 .container__About {
-    height: 100vh;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 /* ...------------------------------------------------------------------------------------------------------------------------ */
 .main__footer {

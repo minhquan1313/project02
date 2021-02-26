@@ -20,3 +20,10 @@ $(window).on("scroll", function () {
         $("body").addClass("atBotOfThisWeb");
     } else $("body").removeClass("atBotOfThisWeb");
 });
+
+// Tu dong them va xoa this--active khi luot den noi dung cua tieu de do
+$(document).on("scroll", function () {
+    if ($(this).scrollTop() >= $("#About").position().top) {
+        console.log("I have been reached");
+    }
+});
