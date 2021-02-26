@@ -214,7 +214,7 @@
 }
 .Home__img {
     background-size: cover;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     background-position: top center;
     width: 100%;
