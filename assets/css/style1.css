@@ -17,11 +17,14 @@
     justify-content: space-between;
     height: var(--header-height);
     background-color: transparent;
-    transition: all 0.2s ease-out;
     /* *** */
 }
 .header.this--active {
     background-color: var(--bg-color-3);
+}
+.header.this--active .header__nav-list {
+    height: 7rem;
+    transform: translateY(-1rem);
 }
 
 .header__name {
@@ -105,12 +108,13 @@
     padding: 0 0.5rem;
     border: 1px solid transparent;
     border-width: 1px 4px 1px;
-    transition: all 0.2s ease-out;
 }
 
-.header__nav-text {
+.header.this--active .header__nav-text {
     font-size: var(--font-size-normal);
-    transition: all 0.2s ease-out;
+}
+.header__nav-text {
+    font-size: var(--font-size-normal--big);
     letter-spacing: 0.1rem;
     text-align: center;
 }
@@ -149,15 +153,45 @@
 }
 /* ------------------------------------------------------------------------------------------------------------------------ */
 .container__Home {
+    position: relative;
+    z-index: 0;
     display: flex;
     align-items: center;
     height: 100vh;
     background-color: var(--bg-color-main);
-
-    /* background-color: #ccc; */
+    overflow: hidden;
+}
+.container__Home::after {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    display: block;
+    top: -50%;
+    left: -50%;
+    width: 80%;
+    height: 80%;
+    border-radius: 3rem;
+    background-color: rgba(247, 49, 171, 0.1);
+    box-shadow: 4rem 4rem 1px rgba(247, 49, 171, 0.08);
+    transform: rotate(45deg);
+}
+.container__Home::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    display: block;
+    bottom: -50%;
+    right: -50%;
+    width: 70%;
+    height: 70%;
+    border-radius: 3rem;
+    background-color: rgba(247, 49, 171, 0.1);
+    box-shadow: 4rem 4rem 1px rgba(247, 49, 171, 0.08);
+    transform: rotate(20deg);
 }
 
 .Home__about {
+    z-index: 1;
     display: flex;
     flex-direction: column;
     /* flex: 1; */
@@ -166,12 +200,11 @@
 }
 
 .Home__lable {
-    /* width: 80%; */
-    margin: 0 0 5vh;
+    margin: 0 0 3vh;
 }
 
 .Home__lable-desc {
-    margin: 0 0 5vh;
+    margin: 0 0 3vh;
 }
 
 .Home__lable-descMain {

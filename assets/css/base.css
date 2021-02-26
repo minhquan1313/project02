@@ -1,5 +1,5 @@
 :root {
-    --header-height:7rem;
+    --header-height: 7rem;
 
     --bg-color-hd: #ff69b4;
     --bg-color-1--dark: #fc90c0;
@@ -8,7 +8,7 @@
     --bg-color-2--soft: #6785f9;
     --bg-color-3: #fddaec;
     --bg-color-4: #e5d8f3;
-    --bg-color-main:#f0ffff;
+    --bg-color-main: #f0ffff;
 
     --text-color-main: #181922;
     --text-color-sub: #726e73;
@@ -42,14 +42,19 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 
-::selection{
+::selection {
     background-color: var(--bg-color-1--dark);
     color: #fff;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 * {
     box-sizing: inherit;
     line-height: 1.5;
+    transition: all 0.2s ease-out;
 }
 
 .grid {
@@ -162,7 +167,7 @@ button {
     top: 2rem;
     right: -0.4rem;
     transition: all 0.9s linear;
-
+}
 .com-text-cap {
     text-transform: capitalize;
 }
