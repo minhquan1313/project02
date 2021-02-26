@@ -169,6 +169,7 @@
     justify-content: center;
     background-color: var(--bg-color-main);
     overflow: hidden;
+    min-height: 30rem;
 }
 
 .container__Home {
