@@ -1,4 +1,6 @@
 :root {
+    --header-height:7rem;
+
     --bg-color-hd: #ff69b4;
     --bg-color-1--dark: #fc90c0;
     --bg-color-1--soft: #fca4cb;
