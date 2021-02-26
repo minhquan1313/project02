@@ -42,19 +42,47 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 
-::selection {
-    background-color: var(--bg-color-1--dark);
-    color: #fff;
+.atTopOfThisWeb::-webkit-scrollbar-thumb {
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
 }
-
-::-webkit-scrollbar {
-    display: none;
+.atBotOfThisWeb::-webkit-scrollbar-thumb {
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
 }
 
 * {
     box-sizing: inherit;
     line-height: 1.5;
     transition: all 0.2s ease-out;
+}
+
+body {
+    transition: all 0.2s ease-out;
+}
+
+::selection {
+    background-color: var(--bg-color-1--dark);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    background-color: red;
+    background-image: url(../img/scroll.jpg);
+    background-size: cover;
+    background-position: top left;
+    border-radius: 1rem;
+    transition: all 0.3 ease-out;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
 }
 
 .grid {
