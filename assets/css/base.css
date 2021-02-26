@@ -68,7 +68,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 1rem;
-    height: 1rem;
+    height: 0rem;
 }
 ::-webkit-scrollbar-button {
     display: none;
