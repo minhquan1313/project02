@@ -169,7 +169,7 @@
     top: -50%;
     left: -50%;
     width: 80%;
-    height: 80%;
+    height: 100%;
     border-radius: 3rem;
     background-color: rgba(247, 49, 171, 0.1);
     box-shadow: 4rem 4rem 1px rgba(247, 49, 171, 0.08);
@@ -189,6 +189,7 @@
     background-color: rgba(247, 49, 171, 0.1);
     box-shadow: 4rem 4rem 1px rgba(247, 49, 171, 0.08);
     transform: rotate(20deg);
+    /* animation: container__HomeA1 3s ease-out infinite, container__HomeA2 3s ease-in infinite; */
 }
 @keyframes container__HomeA1 {
     50% {
