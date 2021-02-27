@@ -92,5 +92,5 @@ $(document).ready(function () {
     setTimeout(function () {
         $("#modal").removeClass("this--active");
         $("#modal *").removeClass("this--active");
-    }, 1000);
+    }, 2000);
 });
