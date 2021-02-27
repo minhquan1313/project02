@@ -1,6 +1,5 @@
 .main {
     background-color: var(--bg-color-main);
-    h
 }
 
 #particles-js {
@@ -29,7 +28,7 @@
     /* *** */
 }
 .header.this--active {
-    background-color: var(--bg-color-3);
+    background-color: var(--bg-color-main);
 }
 .header.this--active .header__nav {
     height: 100%;
@@ -271,8 +270,15 @@
     max-height: 70%;
     min-width: 50rem;
     margin: 0 1rem;
+    animation: Home__img-box 6s linear infinite;
     /* overflow: visible; */
 }
+@keyframes Home__img-box {
+    50% {
+        transform: translateX(-4%) translateY(1%);
+    }
+}
+
 .Home__img {
     background-size: cover;
     /* background-attachment: fixed; */
@@ -296,11 +302,59 @@
     border: 0.2rem solid var(--bg-color-1--dark);
     /* box-shadow: inset 0 0 2rem rgba(0, 0, 0, 0.425), 0 0 4rem rgba(0, 0, 0, 0.425); */
     border-radius: 2rem;
+    animation: Home__img-boxA 6s linear infinite;
+}
+@keyframes Home__img-boxA {
+    50% {
+        transform: translateX(calc(-50% + 04%)) translateY(calc(-50% + 0%));
+    }
 }
 /* ...------------------------------------------------------------------------------------------------------------------------ */
 .container__About {
     /* background-color: rebeccapurple; */
 }
-/* ...------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------------ */
 .main__footer {
+}
+/* ------------------------------------------------------------------------------------------------------------------------ */
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: var(--text-color-blur-2);
+    overflow: hidden;
+    visibility: hidden;
+    /* transition: all 1s ease-out; */
+}
+.modal.this--active {
+    visibility: visible;
+}
+
+.Loader__main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--bg-color-main);
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+.modal.this--active .Loader__main.this--active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.Loader__content {
+    align-self: flex-end;
+    width: 6%;
+    max-width: 15rem;
+    margin: 2%;
+}
+
+.Loader__svg {
+    width: 100%;
 }

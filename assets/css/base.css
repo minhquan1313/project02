@@ -71,8 +71,6 @@ body {
     background-size: cover;
     background-position: top left;
     border-radius: 1111rem;
-    border-top-left-radius: unset;
-    border-top-right-radius: unset;
     transition: all 0.3 ease-out;
 }
 ::-webkit-scrollbar-track {
@@ -80,11 +78,10 @@ body {
     box-shadow: inset 0 0 0.5rem rgba(31, 20, 20, 0.3);
 }
 .atTopOfThisWeb::-webkit-scrollbar-thumb {
-    border-top-left-radius: 1111rem;
-    border-top-right-radius: 1111rem;
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
 }
 .atBotOfThisWeb::-webkit-scrollbar-thumb {
-    border-radius: 1111rem;
     border-bottom-left-radius: unset;
     border-bottom-right-radius: unset;
 }
@@ -168,6 +165,7 @@ button {
     transform: scale(1) rotate(360deg);
     opacity: 1;
 }
+
 .com-decoration {
     position: absolute;
     top: 0;
@@ -175,7 +173,6 @@ button {
     height: 100%;
     width: 100%;
 }
-
 .com-decoration__child {
     position: absolute;
     transform: rotate(0deg);
@@ -191,7 +188,7 @@ button {
 .com-decoration__child:nth-child(2) {
     height: 35%;
     bottom: -0.6rem;
-    left: 3rem;
+    left: 20%;
     transition: all 0.6s linear;
 }
 .com-decoration__child:nth-child(3) {

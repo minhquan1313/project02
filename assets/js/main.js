@@ -12,18 +12,20 @@ $(window).on("scroll", function () {
 //     $(".header__nav-item").removeClass("this--active");
 //     $(this).addClass("this--active");
 // });
-
 //Thay doi border-radius cua thanh cuon neu dang o dau trang hay cuoi trang
+$(document).ready(function () {
+    if ($(window).scrollTop() == 0) {
+        $("body").addClass("atTopOfThisWeb");
+    }
+});
 $(document).ready(function () {
     $(window).on("scroll", function () {
         if ($(window).scrollTop() == 0) {
-            $("body").removeClass("atTopOfThisWeb");
-            console.log("remove");
+            $("body").addClass("atTopOfThisWeb");
         }
 
-        if ($(window).scrollTop() > 0 && $(window).scrollTop() < 100) {
-            $("body").addClass("atTopOfThisWeb");
-            console.log("add");
+        if ($(window).scrollTop() > 0 && $(window).scrollTop() + $(window).height() < $(document).height()) {
+            $("body").removeClass("atTopOfThisWeb");
         }
 
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -83,4 +85,12 @@ $(document).on("scroll", function () {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
     }
+});
+
+// Page loader neeeee
+$(document).ready(function () {
+    setTimeout(function () {
+        $("#modal").removeClass("this--active");
+        $("#modal *").removeClass("this--active");
+    }, 1000);
 });
