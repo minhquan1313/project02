@@ -336,7 +336,7 @@
 .Loader__main {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: var(--bg-color-main);
     height: 100%;
     visibility: hidden;
@@ -349,9 +349,8 @@
 }
 
 .Loader__content {
-    align-self: flex-end;
-    width: 6%;
-    max-width: 15rem;
+    width: 8%;
+    /* max-width: 15rem; */
     margin: 2%;
 }
 
