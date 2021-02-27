@@ -237,7 +237,7 @@
 .Home__lable-descMain {
     font-size: var(--font-size-extremely);
     font-weight: bold;
-    color: var(--bg-color-hd);
+    color: var(--text-color-1);
 }
 
 .Home__lable-descSub {
@@ -267,7 +267,7 @@
     display: flex;
     flex: 1;
     height: 100%;
-    max-height: 70%;
+    max-height: 65%;
     min-width: 50rem;
     margin: 0 1rem;
     animation: Home__img-box 6s linear infinite;

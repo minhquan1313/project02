@@ -17,6 +17,35 @@ $(document).ready(function () {
     if ($(window).scrollTop() == 0) {
         $("body").addClass("atTopOfThisWeb");
     }
+    // Phan o duoi trong nay không lien quan
+    if ($(document).scrollTop() >= $("#Home").position().top && $(document).scrollTop() <= $("#Home").position().top + $("#Home").height()) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#About").position().top && $(this).scrollTop() <= $("#About").position().top + $("#About").height()) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='About']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#Product").position().top && $(this).scrollTop() <= $("#Product").position().top + $("#Product").height()) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='Product']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#InCome").position().top && $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height()) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='InCome']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#Road").position().top && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height()) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='Road']").parent().addClass("this--active");
+    } else if (
+        $(this).scrollTop() >= $("#Download").position().top &&
+        $(this).scrollTop() <= $("#Download").position().top + $("#Download").height()
+    ) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='Download']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#FAQ").position().top && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height()) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='FAQ']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#Contact").position().top && $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height()) {
+        $(".header__nav-item").removeClass("this--active");
+        $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
+    }
 });
 $(document).ready(function () {
     $(window).on("scroll", function () {
@@ -92,5 +121,5 @@ $(document).ready(function () {
     setTimeout(function () {
         $("#modal").removeClass("this--active");
         $("#modal *").removeClass("this--active");
-    }, 2000);
+    }, 1000);
 });
