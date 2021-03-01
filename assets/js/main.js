@@ -49,7 +49,7 @@ $(document).ready(function () {
 // $(".header__nav-item").removeClass("this--active");
 // $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
 // }
-$(document).read(function () {
+$(document).ready(function () {
     if ($(document).scrollTop() >= $("#Home").position().top && $(document).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
