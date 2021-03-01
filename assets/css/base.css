@@ -40,16 +40,16 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    transition: all 0.2s ease-out;
 }
 
 * {
     box-sizing: inherit;
+    transition: inherit;
     line-height: 1.5;
-    transition: all 0.2s ease-out;
 }
 
 body {
-    transition: all 0.2s ease-out;
 }
 
 ::selection {

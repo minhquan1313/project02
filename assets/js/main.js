@@ -1,6 +1,6 @@
 // Khi cuon chuot xuong 1 ti thi them class vao thanh header
 $(window).on("scroll", function () {
-    if ($(this).scrollTop() > 70) $(".header").addClass("this--active");
+    if ($(this).scrollTop() > 0) $(".header").addClass("this--active");
     else $(".header").removeClass("this--active");
 });
 
@@ -18,31 +18,43 @@ $(document).ready(function () {
         $("body").addClass("atTopOfThisWeb");
     }
     // Phan o duoi trong nay không lien quan
-    if ($(document).scrollTop() >= $("#Home").position().top && $(document).scrollTop() <= $("#Home").position().top + $("#Home").height()) {
+    if ($(document).scrollTop() >= $("#Home").position().top && $(document).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
-    } else if ($(this).scrollTop() >= $("#About").position().top && $(this).scrollTop() <= $("#About").position().top + $("#About").height()) {
+    } else if (
+        $(this).scrollTop() >= $("#About").position().top - 1 &&
+        $(this).scrollTop() <= $("#About").position().top + $("#About").height() - 1
+    ) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='About']").parent().addClass("this--active");
-    } else if ($(this).scrollTop() >= $("#Product").position().top && $(this).scrollTop() <= $("#Product").position().top + $("#Product").height()) {
+    } else if (
+        $(this).scrollTop() >= $("#Product").position().top - 1 &&
+        $(this).scrollTop() <= $("#Product").position().top + $("#Product").height() - 1
+    ) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Product']").parent().addClass("this--active");
-    } else if ($(this).scrollTop() >= $("#InCome").position().top && $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height()) {
+    } else if (
+        $(this).scrollTop() >= $("#InCome").position().top - 1 &&
+        $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height() - 1
+    ) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='InCome']").parent().addClass("this--active");
-    } else if ($(this).scrollTop() >= $("#Road").position().top && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height()) {
+    } else if ($(this).scrollTop() >= $("#Road").position().top - 1 && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Road']").parent().addClass("this--active");
     } else if (
-        $(this).scrollTop() >= $("#Download").position().top &&
-        $(this).scrollTop() <= $("#Download").position().top + $("#Download").height()
+        $(this).scrollTop() >= $("#Download").position().top - 1 &&
+        $(this).scrollTop() <= $("#Download").position().top + $("#Download").height() - 1
     ) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Download']").parent().addClass("this--active");
-    } else if ($(this).scrollTop() >= $("#FAQ").position().top && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height()) {
+    } else if ($(this).scrollTop() >= $("#FAQ").position().top - 1 && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='FAQ']").parent().addClass("this--active");
-    } else if ($(this).scrollTop() >= $("#Contact").position().top && $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height()) {
+    } else if (
+        $(this).scrollTop() >= $("#Contact").position().top - 1 &&
+        $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height() - 1
+    ) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
     }
@@ -75,42 +87,45 @@ $(document).ready(function () {
 // $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
 // }
 $(document).on("scroll", function () {
-    if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height()) {
+    if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
     }
 
-    if ($(this).scrollTop() >= $("#About").position().top && $(this).scrollTop() <= $("#About").position().top + $("#About").height()) {
+    if ($(this).scrollTop() >= $("#About").position().top - 1 && $(this).scrollTop() <= $("#About").position().top + $("#About").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='About']").parent().addClass("this--active");
     }
 
-    if ($(this).scrollTop() >= $("#Product").position().top && $(this).scrollTop() <= $("#Product").position().top + $("#Product").height()) {
+    if ($(this).scrollTop() >= $("#Product").position().top - 1 && $(this).scrollTop() <= $("#Product").position().top + $("#Product").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Product']").parent().addClass("this--active");
     }
 
-    if ($(this).scrollTop() >= $("#InCome").position().top && $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height()) {
+    if ($(this).scrollTop() >= $("#InCome").position().top - 1 && $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='InCome']").parent().addClass("this--active");
     }
 
-    if ($(this).scrollTop() >= $("#Road").position().top && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height()) {
+    if ($(this).scrollTop() >= $("#Road").position().top - 1 && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Road']").parent().addClass("this--active");
     }
 
-    if ($(this).scrollTop() >= $("#Download").position().top && $(this).scrollTop() <= $("#Download").position().top + $("#Download").height()) {
+    if (
+        $(this).scrollTop() >= $("#Download").position().top - 1 &&
+        $(this).scrollTop() <= $("#Download").position().top + $("#Download").height() - 1
+    ) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Download']").parent().addClass("this--active");
     }
 
-    if ($(this).scrollTop() >= $("#FAQ").position().top && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height()) {
+    if ($(this).scrollTop() >= $("#FAQ").position().top - 1 && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='FAQ']").parent().addClass("this--active");
     }
 
-    if ($(this).scrollTop() >= $("#Contact").position().top && $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height()) {
+    if ($(this).scrollTop() >= $("#Contact").position().top - 1 && $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
     }
@@ -122,4 +137,11 @@ $(document).ready(function () {
         $("#modal").removeClass("this--active");
         $("#modal *").removeClass("this--active");
     }, 1000);
+});
+
+var typed5 = new Typed("#aaaaa", {
+    strings: ["Nhãn hàng thời trang với quy mô toàn quốc"],
+    typeSpeed: 20,
+    cursorChar: "",
+    loop: false,
 });
