@@ -1,7 +1,11 @@
 // Khi cuon chuot xuong 1 ti thi them class vao thanh header
-$(window).on("scroll", function () {
+$(document).ready(function () {
     if ($(this).scrollTop() > 0) $(".header").addClass("this--active");
     else $(".header").removeClass("this--active");
+    $(window).on("scroll", function () {
+        if ($(this).scrollTop() > 0) $(".header").addClass("this--active");
+        else $(".header").removeClass("this--active");
+    });
 });
 
 // Khi click vao cac muc khac tren thanh header thi xoa class this--active
@@ -17,7 +21,35 @@ $(document).ready(function () {
     if ($(window).scrollTop() == 0) {
         $("body").addClass("atTopOfThisWeb");
     }
-    // Phan o duoi trong nay không lien quan
+});
+$(document).ready(function () {
+    $(window).on("scroll", function () {
+        if ($(window).scrollTop() == 0) {
+            $("body").addClass("atTopOfThisWeb");
+        }
+
+        if ($(window).scrollTop() > 0 && $(window).scrollTop() + $(window).height() < $(document).height()) {
+            $("body").removeClass("atTopOfThisWeb");
+        }
+
+        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $("body").addClass("atBotOfThisWeb");
+        } else $("body").removeClass("atBotOfThisWeb");
+    });
+});
+
+// Tu dong them va xoa this--active khi luot den noi dung cua tieu de do
+// Sử dụng $ lồng nhau kiểu
+// $(".header__nav-item a[href*='Home']")
+// Thì có nghĩa là tìm tất cả class tên header__nav-item mà có con là a và a phải có href chứa Home
+// Vì href*= nên chỉ cần chứa cụm Home là ăn, không cần ghi rõ *='#Home'
+// Và thêm .parent() phía sau để nó biết addClass vào thằng ghi đầu tiên trong $, nếu không thì nó addClass vào thằng a có href...
+// Mau truoc khi chinh sua
+// if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height()) {
+// $(".header__nav-item").removeClass("this--active");
+// $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
+// }
+$(document).read(function () {
     if ($(document).scrollTop() >= $("#Home").position().top && $(document).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
@@ -58,77 +90,59 @@ $(document).ready(function () {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
     }
-});
-$(document).ready(function () {
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() == 0) {
-            $("body").addClass("atTopOfThisWeb");
+    $(document).on("scroll", function () {
+        if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
         }
 
-        if ($(window).scrollTop() > 0 && $(window).scrollTop() + $(window).height() < $(document).height()) {
-            $("body").removeClass("atTopOfThisWeb");
+        if ($(this).scrollTop() >= $("#About").position().top - 1 && $(this).scrollTop() <= $("#About").position().top + $("#About").height() - 1) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='About']").parent().addClass("this--active");
         }
 
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-            $("body").addClass("atBotOfThisWeb");
-        } else $("body").removeClass("atBotOfThisWeb");
+        if (
+            $(this).scrollTop() >= $("#Product").position().top - 1 &&
+            $(this).scrollTop() <= $("#Product").position().top + $("#Product").height() - 1
+        ) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='Product']").parent().addClass("this--active");
+        }
+
+        if (
+            $(this).scrollTop() >= $("#InCome").position().top - 1 &&
+            $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height() - 1
+        ) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='InCome']").parent().addClass("this--active");
+        }
+
+        if ($(this).scrollTop() >= $("#Road").position().top - 1 && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height() - 1) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='Road']").parent().addClass("this--active");
+        }
+
+        if (
+            $(this).scrollTop() >= $("#Download").position().top - 1 &&
+            $(this).scrollTop() <= $("#Download").position().top + $("#Download").height() - 1
+        ) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='Download']").parent().addClass("this--active");
+        }
+
+        if ($(this).scrollTop() >= $("#FAQ").position().top - 1 && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height() - 1) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='FAQ']").parent().addClass("this--active");
+        }
+
+        if (
+            $(this).scrollTop() >= $("#Contact").position().top - 1 &&
+            $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height() - 1
+        ) {
+            $(".header__nav-item").removeClass("this--active");
+            $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
+        }
     });
-});
-
-// Tu dong them va xoa this--active khi luot den noi dung cua tieu de do
-// Sử dụng $ lồng nhau kiểu
-// $(".header__nav-item a[href*='Home']")
-// Thì có nghĩa là tìm tất cả class tên header__nav-item mà có con là a và a phải có href chứa Home
-// Vì href*= nên chỉ cần chứa cụm Home là ăn, không cần ghi rõ *='#Home'
-// Và thêm .parent() phía sau để nó biết addClass vào thằng ghi đầu tiên trong $, nếu không thì nó addClass vào thằng a có href...
-// Mau truoc khi chinh sua
-// if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height()) {
-// $(".header__nav-item").removeClass("this--active");
-// $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
-// }
-$(document).on("scroll", function () {
-    if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
-    }
-
-    if ($(this).scrollTop() >= $("#About").position().top - 1 && $(this).scrollTop() <= $("#About").position().top + $("#About").height() - 1) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='About']").parent().addClass("this--active");
-    }
-
-    if ($(this).scrollTop() >= $("#Product").position().top - 1 && $(this).scrollTop() <= $("#Product").position().top + $("#Product").height() - 1) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Product']").parent().addClass("this--active");
-    }
-
-    if ($(this).scrollTop() >= $("#InCome").position().top - 1 && $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height() - 1) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='InCome']").parent().addClass("this--active");
-    }
-
-    if ($(this).scrollTop() >= $("#Road").position().top - 1 && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height() - 1) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Road']").parent().addClass("this--active");
-    }
-
-    if (
-        $(this).scrollTop() >= $("#Download").position().top - 1 &&
-        $(this).scrollTop() <= $("#Download").position().top + $("#Download").height() - 1
-    ) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Download']").parent().addClass("this--active");
-    }
-
-    if ($(this).scrollTop() >= $("#FAQ").position().top - 1 && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height() - 1) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='FAQ']").parent().addClass("this--active");
-    }
-
-    if ($(this).scrollTop() >= $("#Contact").position().top - 1 && $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height() - 1) {
-        $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
-    }
 });
 
 // Page loader neeeee

@@ -24,7 +24,9 @@
     --font-size-normal: 1.5rem;
     --font-size-normal--small: 1.3rem;
     --font-size-normal--big: 1.8rem;
-    --font-size-extremely: 4rem;
+    --font-size-normal--bigger: 2rem;
+    --font-size-extremely: 5rem;
+    --font-size-extremely--vw: 3vw;
     --font-size-mtb: 1.8rem;
 }
 
@@ -199,4 +201,18 @@ button {
 }
 .com-text-cap {
     text-transform: capitalize;
+}
+
+.com-dash-below-text::after {
+    position: absolute;
+    z-index: -1;
+    top: 90%;
+    right: -20%;
+    content: "";
+    width: 80%;
+    height: 30%;
+    background: linear-gradient(90deg, var(--text-color-1), var(--bg-color-1--dark));
+    transform: skewX(40deg);
+    box-shadow: 3px 2px 0 var(--bg-color-3);
+    border-radius: 4px;
 }
