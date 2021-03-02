@@ -205,13 +205,13 @@ button {
 .com-dash-below-text::after {
     position: absolute;
     z-index: -1;
-    top: 90%;
-    right: -20%;
+    top: 100%;
+    left: 50%;
     content: "";
-    width: 80%;
+    width: 60%;
     height: 30%;
     background: linear-gradient(90deg, var(--text-color-1), var(--bg-color-1--dark));
-    transform: skewX(40deg);
+    transform: skewX(40deg) translateX(-50%);
     box-shadow: 3px 2px 0 var(--bg-color-3);
     border-radius: 4px;
 }

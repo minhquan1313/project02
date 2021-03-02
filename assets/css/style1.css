@@ -386,16 +386,16 @@
     justify-content: center;
     flex: 1;
     padding: 1rem;
-    height: 15rem;
+    height: 10rem;
     max-height: fit-content;
 }
 .About__app-item + .About__app-item {
-    border-left: 4px solid #000;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .About__app-itemIMG {
     height: 100%;
-    width: 100%;
+    width: 60%;
     -o-object-fit: contain;
     object-fit: contain;
 }
@@ -449,6 +449,9 @@
 .About__content1-Text {
     text-align: left;
 }
+.About__content1-Text + .About__content1-Text {
+    margin-top: 2rem;
+}
 
 .About__content1-fiText {
     font-size: var(--font-size-normal--big);
@@ -459,9 +462,21 @@
 }
 
 .About__content1-thText {
-    font-size: var(--font-size-normal--small);
+    font-size: var(--font-size-normal);
 }
 
+.About__content1-btnDiv {
+    margin-top: 2rem;
+    width: 50%;
+    height: 5rem;
+    min-width: fit-content;
+}
+
+.About__content1-btn {
+    width: 100%;
+    height: 100%;
+    font-size: var(--font-size-normal);
+}
 /* ------------------------------------------------------------------------------------------------------------------------ */
 .main__footer {
 }
