@@ -1,5 +1,5 @@
-// Khi cuon chuot xuong 1 ti thi them class vao thanh header
 $(document).ready(function () {
+    // Khi cuon chuot xuong 1 ti thi them class vao thanh header
     if ($(this).scrollTop() > 0) $(".header").addClass("this--active");
     else $(".header").removeClass("this--active");
     $(window).on("scroll", function () {
@@ -8,34 +8,30 @@ $(document).ready(function () {
     });
 });
 
-// Khi click vao cac muc khac tren thanh header thi xoa class this--active
-// va them this--active vao muc vao click vao
-// Vi da co script khi luot toi thi no tu add class nen cai nay co ve
-// nhu la khong can thiet nua
-// $(".header__nav-item").click(function () {
-//     $(".header__nav-item").removeClass("this--active");
-//     $(this).addClass("this--active");
-// });
 //Thay doi border-radius cua thanh cuon neu dang o dau trang hay cuoi trang
 $(document).ready(function () {
     if ($(window).scrollTop() == 0) {
         $("body").addClass("atTopOfThisWeb");
     }
 });
-$(document).ready(function () {
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() == 0) {
-            $("body").addClass("atTopOfThisWeb");
-        }
+$(window).on("scroll", function () {
+    if ($(this).scrollTop() == 0) {
+        $("body").addClass("atTopOfThisWeb");
+    }
 
-        if ($(window).scrollTop() > 0 && $(window).scrollTop() + $(window).height() < $(document).height()) {
-            $("body").removeClass("atTopOfThisWeb");
-        }
+    if ($(window).scrollTop() > 0 && $(window).scrollTop() + $(window).height() < $(document).height()) {
+        $("body").removeClass();
+        console.log("Document height " + $(document).height());
+        console.log("Scroll top " + $(window).scrollTop());
+        console.log("Window height " + $(window).height());
+        console.log("Scroll top +  Window height " + ($(window).scrollTop() + $(window).height()));
+        console.log("--------------------");
+    }
 
-        if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-            $("body").addClass("atBotOfThisWeb");
-        } else $("body").removeClass("atBotOfThisWeb");
-    });
+    if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+        // alert("abc");
+        $("body").addClass("atBotOfThisWeb");
+    }
 });
 
 // Tu dong them va xoa this--active khi luot den noi dung cua tieu de do
