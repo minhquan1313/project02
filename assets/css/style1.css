@@ -207,7 +207,7 @@
     background-color: rgba(247, 49, 171, 0.1);
     box-shadow: 4rem 4rem 1px rgba(247, 49, 171, 0.08);
     transform: rotate(20deg);
-    /* animation: container__HomeA1 3s ease-out infinite, container__HomeA2 3s ease-in infinite; */
+    animation: container__HomeA1 3s ease-out infinite, container__HomeA2 3s ease-in infinite;
 }
 @-webkit-keyframes container__HomeA1 {
     50% {
@@ -603,12 +603,30 @@
 }
 /*... ------------------------------------------------------------------------------------------------------------------------ */
 .About__ProgressBar {
+    position: relative;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: calc(var(--header-height) * 2) 0;
     background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.About__ProgressBar::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -100%;
+    right: -30%;
+    width: 100%;
+    height: 300%;
+    background-color: #aaa;
+    background-image: inherit;
+    border-radius: 4rem;
+    transform-origin: 50% 20%;
+    transform: rotate(-45deg);
 }
 
 .About__ProgressBar-header {
@@ -731,7 +749,7 @@
     max-width: 100%;
     color: #f5f0f7;
     background-color: currentColor;
-    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0rem 0rem 4rem rgba(0, 0, 0, 0.2);
     height: 3rem;
     border-radius: 999rem;
     margin: 4rem 0;
@@ -776,6 +794,7 @@
     border-width: 0.3rem 0.4rem;
     border-style: solid;
     border-color: #f5f0f7;
+    /* box-shadow: 0 0 2rem rgb(0, 0, 0, 0.1); */
 }
 
 .About__ProgressBar-buy {
