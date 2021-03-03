@@ -352,7 +352,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: calc(var(--header-height) * 2) 0 var(--header-height);
+    margin: calc(var(--header-height) * 2) 0 calc(var(--header-height) / 2);
 }
 
 .About__header-labelText {
@@ -371,6 +371,7 @@
 .About__app-list {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -381,7 +382,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    /* flex: 1; */
+    width: calc(100% / 5);
     padding: 1rem;
     height: 10rem;
     max-height: -webkit-fit-content;
@@ -415,9 +417,9 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    /* flex: 1; */
-    padding: 0 4rem;
     width: 60rem;
+    max-width: 100%;
+    padding: 0 4rem;
 }
 
 .About__content1-img {
@@ -432,6 +434,7 @@
 .About__content1-boxContent {
     position: relative;
     width: 80rem;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -612,13 +615,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: var(--font-size-extremely);
 }
 
 .About__ProgressBar-header_P {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--font-size-extremely);
 }
 
 .About__ProgressBar-subHeader {
@@ -722,26 +725,57 @@
 
 .About__ProgressBar-bar {
     position: relative;
+    z-index: 1;
     width: 120rem;
+    min-width: 30rem;
     max-width: 100%;
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+    color: #f5f0f7;
+    background-color: currentColor;
+    box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.2);
     height: 3rem;
     border-radius: 999rem;
-    margin: 2rem 0;
+    margin: 4rem 0;
+}
+.About__ProgressBar-bar::after {
+    position: absolute;
+    top: calc(100% - 1px);
+    right: 3rem;
+    content: "";
+    font-size: 3rem;
+    border-width: 1rem 3rem 0;
+    border-style: solid;
+    border-color: currentColor transparent;
 }
 
 .About__ProgressBar-bar--filled {
     position: absolute;
+    padding: 0.2rem;
     top: 0;
     left: 0;
     bottom: 0;
     width: var(--percentFilled);
-    background-color: #fff;
+    background-color: currentColor;
     background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+    color: #feada6;
+    background-clip: content-box;
     border-radius: inherit;
     border-top-right-radius: unset;
     border-bottom-right-radius: unset;
+}
+.About__ProgressBar-bar--filled::after {
+    position: absolute;
+    z-index: -1;
+    top: calc(100% - 1.7rem);
+    right: 3rem;
+    content: "";
+    font-size: 3rem;
+    width: 3rem;
+    height: 2rem;
+    transform: rotate(-21deg) skewX(47deg);
+    background-color: currentColor;
+    border-width: 0.3rem 0.4rem;
+    border-style: solid;
+    border-color: #f5f0f7;
 }
 
 .About__ProgressBar-buy {

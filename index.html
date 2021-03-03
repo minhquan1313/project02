@@ -312,7 +312,15 @@
                             <div class="Home__lable-desc">
                                 <p class="Home__lable-descSub">
                                     Web này được code với mục đích cho vui chứ không có kinh doanh hay bất cứ thứ gì liên quan đến thương mại. Tất cả
-                                    là bốc phét :) Web mẫu: <a href="https://technext.github.io/cyption">https://technext.github.io/cyption</a>
+                                    là bốc phét :) Web mẫu:
+                                    <!-- Thêm target="_blank" để mở link trong 1 tab mới
+                                    Thêm rel="noopener noreferrer" để ngăn lừa đảo, đại loại là có 1 loại lừa đảo sẻ tận dụng thẻ 
+                                    a có target="_blank" để tự mở 1 trang web khác, thường là trang login giả để lừa người 
+                                    dùng trên chính trang web này - MTB Crypt, vì thế có target... phải luôn có rel...  
+                                    Nguồn: https://www.freecodecamp.org/news/how-to-use-html-to-open-link-in-new-tab/-->
+                                    <a href="https://technext.github.io/cyption" target="_blank" rel="noopener noreferrer"
+                                        >https://technext.github.io/cyption</a
+                                    >
                                 </p>
                             </div>
                         </div>
@@ -460,7 +468,8 @@
 
                     <div class="About__ProgressBar">
                         <div class="About__ProgressBar-header">
-                            <p class="About__ProgressBar-header_P">ICO Live Now</p>
+                            <a href="javascript:;" class="About__ProgressBar-subHeader_information_link">ICO</a>
+                            <p class="About__ProgressBar-header_P">Live Now</p>
                         </div>
 
                         <div class="About__ProgressBar-subHeader">
@@ -505,7 +514,7 @@
                         </div>
 
                         <div class="About__ProgressBar-bar">
-                            <div data-percentFilled="50%" class="About__ProgressBar-bar--filled" style="--percentFilled: 50%"></div>
+                            <div data-percentFilled="50%" class="About__ProgressBar-bar--filled" style="--percentFilled: 30%"></div>
                         </div>
 
                         <div class="About__ProgressBar-buy">
