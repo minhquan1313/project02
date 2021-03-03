@@ -342,10 +342,7 @@
     position: relative;
     z-index: 1;
     /* background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%); */
-    background-image: url(../img/container/vectorPngCanhHoa.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-attachment: fixed;
+    /* background-image: url(../img/container/vectorPngCanhHoa.png); */
 }
 .container__About::after {
     content: "";
@@ -355,8 +352,12 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-image: url(../img/container/vectorPngCanhHoa.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
     /* background-color: rgba(0, 0, 0, 0.3); */
-    background: inherit;
+    /* background: inherit; */
     filter: blur(6px);
     /* backdrop-filter: blur(6px); */
 }
