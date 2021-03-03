@@ -341,10 +341,8 @@
 .container__About {
     position: relative;
     z-index: 1;
-    /* background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%); */
-    /* background-image: url(../img/container/vectorPngCanhHoa.png); */
 }
-.container__About::after {
+.container__About_NotProgressBar::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -352,14 +350,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(../img/container/vectorPngCanhHoa.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-attachment: fixed;
-    /* background-color: rgba(0, 0, 0, 0.3); */
+    /* background-image: url(../img/container/vectorPngCanhHoa.png); */
+
+    /* background-attachment: fixed; */
+    background-color: rgba(0, 0, 0, 0.2);
     /* background: inherit; */
-    filter: blur(6px);
-    /* backdrop-filter: blur(6px); */
+    /* filter: blur(6px); */
+    backdrop-filter: blur(6px);
+    display: none;
 }
 .container__About::before {
     content: "";
@@ -370,6 +368,16 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.container__About_NotProgressBar {
+    position: relative;
+    z-index: 1;
+    /* background-image: url(../img/container/vectorPngCanhHoa.png);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
 }
 
 .About__header {
@@ -438,7 +446,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
+    margin: 4rem auto;
 }
 
 .About__content1-box {
@@ -629,7 +637,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
 }
-/*... ------------------------------------------------------------------------------------------------------------------------ */
+/* ------------------------------------------------------------------------------------------------------------------------ */
 .About__ProgressBar {
     position: relative;
     z-index: 1;
@@ -675,7 +683,7 @@
     justify-content: space-between;
     align-items: center;
     width: 120rem;
-    max-width: 100%;
+    max-width: 95%;
     margin: 2rem 0;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -774,7 +782,7 @@
     z-index: 1;
     width: 120rem;
     min-width: 30rem;
-    max-width: 100%;
+    max-width: 95%;
     color: #f5f0f7;
     background-color: currentColor;
     box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.1);
@@ -861,7 +869,74 @@
     padding: 1rem;
     font-size: var(--font-size-normal);
 }
+/*... ------------------------------------------------------------------------------------------------------------------------ */
+.container__Product {
+}
 
+.Product__inner {
+}
+
+.Product__header {
+    margin: calc(var(--header-height) * 2) 0 var(--header-height);
+}
+
+.Product__headerFirst {
+    margin: auto;
+    color: #000;
+    text-shadow: none;
+}
+
+.Product__headerSecond {
+    text-align: center;
+    font-size: var(--font-size-extremely);
+    margin-top: 3rem;
+}
+
+.Product__flags {
+}
+
+.Product__flags-list {
+}
+
+.Product__flags-item {
+}
+
+.Product__flags-itemIMG {
+    width: 100%;
+    padding-top: 70%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.Product__flags-itemName {
+    font-size: var(--font-size-normal--big);
+    text-align: center;
+    font-weight: bold;
+}
+
+.Product__distibution {
+    display: flex;
+    flex-direction: column;
+}
+
+.Product__distibution-imgWrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+.Product__distibution-IMG {
+    width: 40rem;
+    object-position: center;
+    background-color: #ccc;
+}
+
+.Product__distibutionIMGDesc {
+    font-size: var(--font-size-normal);
+}
+.Product__distibutionIMGDesc:nth-child(2) {
+    background-color: red;
+}
 /* ------------------------------------------------------------------------------------------------------------------------ */
 .main__footer {
 }

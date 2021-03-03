@@ -20,7 +20,6 @@
     --text-color-blur-4: rgba(0, 0, 0, 0.2);
     --text-color-blur-5: rgba(0, 0, 0, 0.1);
 
-    --grid__margin: 6px;
     --font-size-normal: 1.5rem;
     --font-size-normal--small: 1.3rem;
     --font-size-normal--big: 1.8rem;
@@ -28,6 +27,8 @@
     --font-size-extremely: 5rem;
     --font-size-extremely--vw: 3vw;
     --font-size-mtb: 1.8rem;
+
+    --grid__margin: 10px;
 }
 
 @font-face {
@@ -110,7 +111,12 @@ body {
 }
 
 .grid__c1 {
-    width: 50%;
+    width: 100%;
+    padding: 0 var(--grid__margin);
+}
+
+.grid__c5 {
+    width: calc(100% / 5);
     padding: 0 var(--grid__margin);
 }
 
