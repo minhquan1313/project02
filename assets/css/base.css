@@ -42,7 +42,7 @@ html {
     box-sizing: border-box;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
-    transition: all 0.2s ease-out;
+    transition: all 0.3s ease-out;
 }
 
 * {

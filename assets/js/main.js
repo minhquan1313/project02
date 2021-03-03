@@ -137,8 +137,7 @@ $(document).ready(function () {
 });
 
 // Page loader neeeee
-// const delayTimeForPageLoader = 10;
-const delayTimeForPageLoader = 1000;
+const delayTimeForPageLoader = 10;
 $(document).ready(function () {
     setTimeout(function () {
         $("#modal").removeClass("this--active");
