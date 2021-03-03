@@ -492,34 +492,38 @@
 
 .About__Box-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    width: 120rem;
-    height: 12rem;
-    margin: var(--header-height) 0;
+    margin: var(--header-height) -1rem;
+}
+
+.About__Box-itemWrapper {
+    width: calc(100% / 3);
+    height: 100%;
+    margin-top: 1rem;
+    padding: 0 1rem;
 }
 
 .About__Box-item {
     position: relative;
-    width: calc(100% / 3);
-    height: 100%;
-    margin: 0 1.6rem;
     display: flex;
     align-items: center;
     border-radius: 2rem;
     /* border-bottom: 3px solid rgba(0, 0, 0, 0.7); */
     background-color: #ff719a;
-    color: #ffecd2;
+    color: #fff;
     box-shadow: 0 0 2rem rgb(0 0 0 / 10%);
+    height: 12rem;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
     overflow: hidden;
 }
-.About__Box-item:nth-child(2) {
+.About__Box-itemWrapper:nth-child(2) .About__Box-item {
     background-color: #46403f;
 }
-.About__Box-item:nth-child(3) {
+.About__Box-itemWrapper:nth-child(3) .About__Box-item {
     background-color: #ff9a44;
 }
 .About__Box-item:hover .About__Box-itemPseudo {
@@ -545,12 +549,13 @@
     width: 40%;
     padding: 1rem;
     text-shadow: 4px 2px 4px rgb(0 0 0 / 50%);
+    transition: all 0.4s ease-out;
 }
 
 .About__Box-label {
     width: 0;
     flex: 1;
-    /* width: fit-content; */
+    transition: all 0.4s ease-out;
 }
 
 .About__Box-lableP {
@@ -580,6 +585,7 @@
     overflow: hidden;
     transform: translateY(100%);
     opacity: 0;
+    transition: all 0.4s ease-out;
 }
 
 .About__Box-itemPseudoP {
@@ -598,8 +604,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #ccc;
     padding: calc(var(--header-height) * 2) 0;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
 
 .About__ProgressBar-header {
@@ -622,7 +628,6 @@
     width: 120rem;
     max-width: 100%;
     margin: 2rem 0;
-    background-color: #bbb;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -718,9 +723,12 @@
 .About__ProgressBar-bar {
     position: relative;
     width: 120rem;
-    background-color: #bbb;
+    max-width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
     height: 3rem;
     border-radius: 999rem;
+    margin: 2rem 0;
 }
 
 .About__ProgressBar-bar--filled {
@@ -730,6 +738,7 @@
     bottom: 0;
     width: var(--percentFilled);
     background-color: #fff;
+    background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
     border-radius: inherit;
     border-top-right-radius: unset;
     border-bottom-right-radius: unset;
@@ -747,7 +756,7 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
-    font-size: var(--font-size-normal--big);
+    font-size: var(--font-size-normal);
 }
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
