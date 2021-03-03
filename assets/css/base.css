@@ -210,9 +210,9 @@ button {
     left: 50%;
     content: "";
     width: 60%;
-    height: 30%;
+    height: 10%;
     background: linear-gradient(90deg, var(--text-color-1), var(--bg-color-1--dark));
     transform: skewX(40deg) translateX(-50%);
-    box-shadow: 3px 2px 0 var(--bg-color-3);
+    box-shadow: 2px 1px 0 var(--bg-color-3);
     border-radius: 4px;
 }

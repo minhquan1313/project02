@@ -21,11 +21,6 @@ $(window).on("scroll", function () {
 
     if ($(window).scrollTop() > 0 && $(window).scrollTop() + $(window).height() < $(document).height()) {
         $("body").removeClass();
-        console.log("Document height " + $(document).height());
-        console.log("Scroll top " + $(window).scrollTop());
-        console.log("Window height " + $(window).height());
-        console.log("Scroll top +  Window height " + ($(window).scrollTop() + $(window).height()));
-        console.log("--------------------");
     }
 
     if ($(window).scrollTop() + $(window).height() == $(document).height()) {
@@ -142,17 +137,20 @@ $(document).ready(function () {
 });
 
 // Page loader neeeee
+// const delayTimeForPageLoader = 10;
+const delayTimeForPageLoader = 1000;
 $(document).ready(function () {
     setTimeout(function () {
         $("#modal").removeClass("this--active");
         $("#modal *").removeClass("this--active");
-    }, 1000);
+    }, delayTimeForPageLoader);
 });
 
 // Typed JS
 var typed5 = new Typed("#aaaaa", {
     strings: ["Nhãn hàng thời trang với quy mô toàn quốc"],
     typeSpeed: 20,
+    startDelay: delayTimeForPageLoader + 400,
     cursorChar: "",
     loop: false,
 });
