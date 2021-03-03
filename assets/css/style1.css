@@ -341,7 +341,34 @@
 .container__About {
     position: relative;
     z-index: 1;
-    background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%);
+    /* background-image: linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%); */
+    background-image: url(../img/container/vectorPngCanhHoa.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+.container__About::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    background: inherit;
+    filter: blur(6px);
+    /* backdrop-filter: blur(6px); */
+}
+.container__About::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .About__header {
@@ -382,7 +409,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* flex: 1; */
+    z-index: 1;
     width: calc(100% / 5);
     padding: 1rem;
     height: 10rem;
@@ -749,20 +776,34 @@
     max-width: 100%;
     color: #f5f0f7;
     background-color: currentColor;
-    box-shadow: 0rem 0rem 4rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.1);
     height: 3rem;
     border-radius: 999rem;
     margin: 4rem 0;
 }
 .About__ProgressBar-bar::after {
-    position: absolute;
+    /* position: absolute;
     top: calc(100% - 1px);
     right: 3rem;
     content: "";
     font-size: 3rem;
     border-width: 1rem 3rem 0;
     border-style: solid;
-    border-color: currentColor transparent;
+    border-color: currentColor transparent; */
+    position: absolute;
+    z-index: -1;
+    top: calc(100% - 1.7rem);
+    right: 3rem;
+    content: "";
+    font-size: 3rem;
+    width: 3rem;
+    height: 2rem;
+    transform: rotate(-21deg) skewX(47deg);
+    background-color: currentColor;
+    border-width: 0.3rem 0.4rem;
+    border-style: solid;
+    border-color: #f5f0f7;
+    display: none;
 }
 
 .About__ProgressBar-bar--filled {
@@ -786,7 +827,6 @@
     top: calc(100% - 1.7rem);
     right: 3rem;
     content: "";
-    font-size: 3rem;
     width: 3rem;
     height: 2rem;
     transform: rotate(-21deg) skewX(47deg);
@@ -795,6 +835,15 @@
     border-style: solid;
     border-color: #f5f0f7;
     /* box-shadow: 0 0 2rem rgb(0, 0, 0, 0.1); */
+}
+.About__ProgressBar-bar--filled::before {
+    position: absolute;
+    content: attr(data-percentFilled);
+    top: calc(100% + 1rem);
+    right: 5rem;
+    color: var(--text-color-main);
+    transform: translateX(50%);
+    font-size: var(--font-size-normal--big);
 }
 
 .About__ProgressBar-buy {
