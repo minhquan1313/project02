@@ -43,6 +43,15 @@ $(window).on("load", function () {
         $("body").removeClass("noScrollBar");
     }, delayTimeForPageLoader + 500 + 500 + 500);
 });
+// Typed JS
+var typed5 = new Typed("#aaaaa", {
+    strings: ["Nhãn hàng thời trang với quy mô toàn quốc"],
+    typeSpeed: 20,
+    startDelay: delayTimeForPageLoader + 500 + 500 + 300,
+    cursorChar: "",
+    loop: false,
+});
+// --------------------------------------------------------------------
 
 $(document).ready(function () {
     // Khi cuon chuot xuong 1 ti thi them class vao thanh header
@@ -249,13 +258,4 @@ $(document).ready(function () {
                 .addClass("this--active");
         }
     });
-});
-
-// Typed JS
-var typed5 = new Typed("#aaaaa", {
-    strings: ["Nhãn hàng thời trang với quy mô toàn quốc"],
-    typeSpeed: 20,
-    startDelay: delayTimeForPageLoader + 400,
-    cursorChar: "",
-    loop: false,
 });
