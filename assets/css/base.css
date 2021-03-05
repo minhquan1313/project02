@@ -55,6 +55,11 @@ html {
 body {
 }
 
+::-moz-selection {
+    background-color: var(--bg-color-1--dark);
+    color: #fff;
+}
+
 ::selection {
     background-color: var(--bg-color-1--dark);
     color: #fff;
@@ -74,6 +79,7 @@ body {
     background-size: cover;
     background-position: top left;
     border-radius: 1111rem;
+    -webkit-transition: all 0.3 ease-out;
     transition: all 0.3 ease-out;
 }
 ::-webkit-scrollbar-track {
@@ -151,13 +157,7 @@ button {
     z-index: 1;
     background-color: transparent;
     /* background-image: linear-gradient(90deg, var(--text-color-1), var(--text-color-2)); */
-    background-image: linear-gradient(
-        to right,
-        #f78ca0 0%,
-        #f9748f 19%,
-        #fd868c 60%,
-        #fe9a8b 100%
-    );
+    background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
     color: #fff;
     border-radius: var(--grid__margin);
     text-shadow: 2px 2px 4px var(--text-color-blur-4);
@@ -231,11 +231,7 @@ button {
     content: "";
     width: 60%;
     height: 10%;
-    background: linear-gradient(
-        90deg,
-        var(--text-color-1),
-        var(--bg-color-1--dark)
-    );
+    background: linear-gradient(90deg, var(--text-color-1), var(--bg-color-1--dark));
     transform: skewX(40deg) translateX(-50%);
     box-shadow: 2px 1px 0 var(--bg-color-3);
     border-radius: 4px;

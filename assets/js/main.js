@@ -33,22 +33,25 @@ $(window).on("load", function () {
         });
     }, delayTimeForPageLoader + 500 + 500);
 
-    // Ẩn modal và các
-    setTimeout(function () {
-        $("#modal").removeClass("this--active");
-        $("#modal *").removeClass("this--active Loader__main--active");
-    }, delayTimeForPageLoader + 500 + 500 + 500);
-
     // Hiện lại thanh cuộn
     setTimeout(function () {
         $("body").removeClass("noScrollBar");
-    }, delayTimeForPageLoader + 500 + 500 + 500);
+    }, delayTimeForPageLoader + 500 + 500);
+
+    // Ẩn modal và các style
+    setTimeout(function () {
+        $("#modal").removeClass("this--active");
+        $("#modal *").removeClass("this--active Loader__main--active");
+
+        $(".Loader__wrapper").removeAttr("style");
+        $(".Loader__main").removeAttr("style");
+    }, delayTimeForPageLoader + 500 + 500 + 1000);
 });
 // Typed JS
 var typed5 = new Typed("#aaaaa", {
     strings: ["Nhãn hàng thời trang với quy mô toàn quốc"],
     typeSpeed: 20,
-    startDelay: delayTimeForPageLoader + 500 + 500 + 300,
+    startDelay: delayTimeForPageLoader + 500 + 500 + 500,
     cursorChar: "",
     loop: false,
 });
@@ -75,10 +78,7 @@ $(window).on("scroll", function () {
         $("body").addClass("atTopOfThisWeb");
     }
 
-    if (
-        $(window).scrollTop() > 0 &&
-        $(window).scrollTop() + $(window).height() < $(document).height()
-    ) {
+    if ($(window).scrollTop() > 0 && $(window).scrollTop() + $(window).height() < $(document).height()) {
         $("body").removeClass("atTopOfThisWeb atBotOfThisWeb");
     }
 
@@ -100,163 +100,70 @@ $(window).on("scroll", function () {
 // $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
 // }
 $(document).ready(function () {
-    if (
-        $(document).scrollTop() >= $("#Home").position().top &&
-        $(document).scrollTop() <=
-            $("#Home").position().top + $("#Home").height() - 1
-    ) {
+    if ($(document).scrollTop() >= $("#Home").position().top && $(document).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Home']")
-            .parent()
-            .addClass("this--active");
-    } else if (
-        $(this).scrollTop() >= $("#About").position().top - 1 &&
-        $(this).scrollTop() <=
-            $("#About").position().top + $("#About").height() - 1
-    ) {
+        $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#About").position().top - 1 && $(this).scrollTop() <= $("#About").position().top + $("#About").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='About']")
-            .parent()
-            .addClass("this--active");
-    } else if (
-        $(this).scrollTop() >= $("#Product").position().top - 1 &&
-        $(this).scrollTop() <=
-            $("#Product").position().top + $("#Product").height() - 1
-    ) {
+        $(".header__nav-item a[href*='About']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#Product").position().top - 1 && $(this).scrollTop() <= $("#Product").position().top + $("#Product").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Product']")
-            .parent()
-            .addClass("this--active");
-    } else if (
-        $(this).scrollTop() >= $("#InCome").position().top - 1 &&
-        $(this).scrollTop() <=
-            $("#InCome").position().top + $("#InCome").height() - 1
-    ) {
+        $(".header__nav-item a[href*='Product']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#InCome").position().top - 1 && $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='InCome']")
-            .parent()
-            .addClass("this--active");
-    } else if (
-        $(this).scrollTop() >= $("#Road").position().top - 1 &&
-        $(this).scrollTop() <=
-            $("#Road").position().top + $("#Road").height() - 1
-    ) {
+        $(".header__nav-item a[href*='InCome']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#Road").position().top - 1 && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Road']")
-            .parent()
-            .addClass("this--active");
-    } else if (
-        $(this).scrollTop() >= $("#Download").position().top - 1 &&
-        $(this).scrollTop() <=
-            $("#Download").position().top + $("#Download").height() - 1
-    ) {
+        $(".header__nav-item a[href*='Road']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#Download").position().top - 1 && $(this).scrollTop() <= $("#Download").position().top + $("#Download").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Download']")
-            .parent()
-            .addClass("this--active");
-    } else if (
-        $(this).scrollTop() >= $("#FAQ").position().top - 1 &&
-        $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height() - 1
-    ) {
+        $(".header__nav-item a[href*='Download']").parent().addClass("this--active");
+    } else if ($(this).scrollTop() >= $("#FAQ").position().top - 1 && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
         $(".header__nav-item a[href*='FAQ']").parent().addClass("this--active");
-    } else if (
-        $(this).scrollTop() >= $("#Contact").position().top - 1 &&
-        $(this).scrollTop() <=
-            $("#Contact").position().top + $("#Contact").height() - 1
-    ) {
+    } else if ($(this).scrollTop() >= $("#Contact").position().top - 1 && $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height() - 1) {
         $(".header__nav-item").removeClass("this--active");
-        $(".header__nav-item a[href*='Contact']")
-            .parent()
-            .addClass("this--active");
+        $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
     }
     $(document).on("scroll", function () {
-        if (
-            $(this).scrollTop() >= $("#Home").position().top &&
-            $(this).scrollTop() <=
-                $("#Home").position().top + $("#Home").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#Home").position().top && $(this).scrollTop() <= $("#Home").position().top + $("#Home").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='Home']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='Home']").parent().addClass("this--active");
         }
 
-        if (
-            $(this).scrollTop() >= $("#About").position().top - 1 &&
-            $(this).scrollTop() <=
-                $("#About").position().top + $("#About").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#About").position().top - 1 && $(this).scrollTop() <= $("#About").position().top + $("#About").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='About']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='About']").parent().addClass("this--active");
         }
 
-        if (
-            $(this).scrollTop() >= $("#Product").position().top - 1 &&
-            $(this).scrollTop() <=
-                $("#Product").position().top + $("#Product").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#Product").position().top - 1 && $(this).scrollTop() <= $("#Product").position().top + $("#Product").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='Product']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='Product']").parent().addClass("this--active");
         }
 
-        if (
-            $(this).scrollTop() >= $("#InCome").position().top - 1 &&
-            $(this).scrollTop() <=
-                $("#InCome").position().top + $("#InCome").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#InCome").position().top - 1 && $(this).scrollTop() <= $("#InCome").position().top + $("#InCome").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='InCome']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='InCome']").parent().addClass("this--active");
         }
 
-        if (
-            $(this).scrollTop() >= $("#Road").position().top - 1 &&
-            $(this).scrollTop() <=
-                $("#Road").position().top + $("#Road").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#Road").position().top - 1 && $(this).scrollTop() <= $("#Road").position().top + $("#Road").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='Road']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='Road']").parent().addClass("this--active");
         }
 
-        if (
-            $(this).scrollTop() >= $("#Download").position().top - 1 &&
-            $(this).scrollTop() <=
-                $("#Download").position().top + $("#Download").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#Download").position().top - 1 && $(this).scrollTop() <= $("#Download").position().top + $("#Download").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='Download']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='Download']").parent().addClass("this--active");
         }
 
-        if (
-            $(this).scrollTop() >= $("#FAQ").position().top - 1 &&
-            $(this).scrollTop() <=
-                $("#FAQ").position().top + $("#FAQ").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#FAQ").position().top - 1 && $(this).scrollTop() <= $("#FAQ").position().top + $("#FAQ").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='FAQ']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='FAQ']").parent().addClass("this--active");
         }
 
-        if (
-            $(this).scrollTop() >= $("#Contact").position().top - 1 &&
-            $(this).scrollTop() <=
-                $("#Contact").position().top + $("#Contact").height() - 1
-        ) {
+        if ($(this).scrollTop() >= $("#Contact").position().top - 1 && $(this).scrollTop() <= $("#Contact").position().top + $("#Contact").height() - 1) {
             $(".header__nav-item").removeClass("this--active");
-            $(".header__nav-item a[href*='Contact']")
-                .parent()
-                .addClass("this--active");
+            $(".header__nav-item a[href*='Contact']").parent().addClass("this--active");
         }
     });
 });
