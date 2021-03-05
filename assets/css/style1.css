@@ -27,8 +27,16 @@
     background-color: transparent;
 }
 .header.this--active {
-    height: 6rem;
-    background-color: var(--bg-color-main);
+    height: 5rem;
+    /* background-color: var(--bg-color-main); */
+    background-image: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.3)
+    );
+    backdrop-filter: blur(6px);
+    border-bottom-right-radius: var(--grid__margin);
+    border-bottom-left-radius: var(--grid__margin);
 }
 .header.this--active .header__nav {
     height: 100%;

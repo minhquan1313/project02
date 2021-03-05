@@ -29,16 +29,17 @@ $(window).on("load", function () {
         });
 
         $(".Loader__wrapper").css({
-            // opacity: "0",
             visibility: "hidden",
         });
     }, delayTimeForPageLoader + 500 + 500);
 
+    // Ẩn modal và các
     setTimeout(function () {
         $("#modal").removeClass("this--active");
-        $("#modal *").removeClass("this--active");
+        $("#modal *").removeClass("this--active Loader__main--active");
     }, delayTimeForPageLoader + 500 + 500 + 500);
 
+    // Hiện lại thanh cuộn
     setTimeout(function () {
         $("body").removeClass("noScrollBar");
     }, delayTimeForPageLoader + 500 + 500 + 500);
