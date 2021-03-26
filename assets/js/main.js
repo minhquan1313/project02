@@ -1,3 +1,9 @@
+// const test = document.querySelector(".Product__distibution-imgWrapper2");
+// console.log(test);
+// test.addEventListener("mousemove", (e) => {
+//     console.log("Moving");
+// });
+
 if ($("#modal").hasClass("this--active")) {
     $("body").addClass("noScrollBar");
 } else {
@@ -48,13 +54,13 @@ $(window).on("load", function () {
     }, delayTimeForPageLoader + 500 + 500 + 1000);
 });
 // Typed JS
-var typed5 = new Typed("#aaaaa", {
-    strings: ["Nhãn hàng thời trang với quy mô toàn quốc"],
-    typeSpeed: 20,
-    startDelay: delayTimeForPageLoader + 500 + 500 + 500,
-    cursorChar: "",
-    loop: false,
-});
+// var typed5 = new Typed("#aaaaa", {
+//     strings: ["Nhãn hàng thời trang với quy mô toàn quốc"],
+//     typeSpeed: 20,
+//     startDelay: delayTimeForPageLoader + 500 + 500 + 500,
+//     cursorChar: "",
+//     loop: false,
+// });
 // --------------------------------------------------------------------
 
 $(document).ready(function () {
